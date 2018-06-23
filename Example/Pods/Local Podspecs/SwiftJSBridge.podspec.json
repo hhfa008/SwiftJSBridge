@@ -1,0 +1,22 @@
+{
+  "name": "SwiftJSBridge",
+  "version": "0.1.0",
+  "summary": "A short description of SwiftJSBridge.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/hhfa008/SwiftJSBridge",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "hhfa008": "hhfa008@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/hhfa008/SwiftJSBridge.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "SwiftJSBridge/Classes/**/*"
+}
