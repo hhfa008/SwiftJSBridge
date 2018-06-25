@@ -45,7 +45,7 @@
 		95835669623A212F294DB67B /* Pods_SwiftJSBridge_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftJSBridge_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A835FFE8C97027884487E77B /* Pods-SwiftJSBridge_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftJSBridge_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftJSBridge_Example/Pods-SwiftJSBridge_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		CF4A0CA1ED68149D08F52E10 /* Pods-SwiftJSBridge_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftJSBridge_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftJSBridge_Tests/Pods-SwiftJSBridge_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		D64EDBE7D279DB2454DF3387 /* SwiftJSBridge.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SwiftJSBridge.podspec; path = ../SwiftJSBridge.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		D64EDBE7D279DB2454DF3387 /* BetterSwiftJSBridge.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = BetterSwiftJSBridge.podspec; path = ../BetterSwiftJSBridge.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		EB85D82280FCD3C69332E274 /* Pods-SwiftJSBridge_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftJSBridge_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftJSBridge_Tests/Pods-SwiftJSBridge_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		F3779A4B20DE15BF005F8F17 /* test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = test.html; path = ../../../../WebstormProjects/SwiftJSBridge/test.html; sourceTree = "<group>"; };
 		FBB6654DFD177B046F656292 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -144,7 +144,7 @@
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				D64EDBE7D279DB2454DF3387 /* SwiftJSBridge.podspec */,
+				D64EDBE7D279DB2454DF3387 /* BetterSwiftJSBridge.podspec */,
 				4CDC09B4D844D28BD1D9C3FE /* README.md */,
 				FBB6654DFD177B046F656292 /* LICENSE */,
 			);

@@ -44,15 +44,15 @@
 /* Begin PBXFileReference section */
 		0A243D9942CE8A63E7C6F0C7C7F35ED7 /* JSFile.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSFile.swift; path = SwiftJSBridge/Classes/JSFile.swift; sourceTree = "<group>"; };
 		1708E085929B435471BC175241556380 /* Pods-SwiftJSBridge_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftJSBridge_Tests-resources.sh"; sourceTree = "<group>"; };
-		29CC8F89C575C438B2C180CF0753A8A9 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		3051BB877D92A1D24EBCAE994CF097D9 /* Pods_SwiftJSBridge_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SwiftJSBridge_Example.framework; path = "Pods-SwiftJSBridge_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		29CC8F89C575C438B2C180CF0753A8A9 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		3051BB877D92A1D24EBCAE994CF097D9 /* Pods_SwiftJSBridge_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftJSBridge_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		343F0B0D0811E7242574EE8DBBF55B62 /* SwiftJSBridge-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftJSBridge-umbrella.h"; sourceTree = "<group>"; };
 		3E37F0470314D1A9900A84F5945B2AB6 /* Pods-SwiftJSBridge_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftJSBridge_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		46B61A199B6586E9B6B0C6048798AC55 /* Pods-SwiftJSBridge_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SwiftJSBridge_Tests.modulemap"; sourceTree = "<group>"; };
 		477F8DC34B3D0742895F5F6EEA9D0185 /* Pods-SwiftJSBridge_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftJSBridge_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		4CE700DD6B494DF560D827E4D761BA57 /* UIWebViewJSBridge.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIWebViewJSBridge.swift; path = SwiftJSBridge/Classes/UIWebViewJSBridge.swift; sourceTree = "<group>"; };
 		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		62BFBE959F75639C4C6A5B9BBBC5B5A3 /* Pods_SwiftJSBridge_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SwiftJSBridge_Tests.framework; path = "Pods-SwiftJSBridge_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		62BFBE959F75639C4C6A5B9BBBC5B5A3 /* Pods_SwiftJSBridge_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftJSBridge_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63AC3FB98FA2CEF5C11187A8E2D82909 /* Pods-SwiftJSBridge_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftJSBridge_Example-umbrella.h"; sourceTree = "<group>"; };
 		687261C1F0678EDE97B6B6632E378F46 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68C96776E74934E6DDA887C94A9EE2FC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,11 +60,11 @@
 		79AB7AEB56E3559DCA7DF23E63DAB0D9 /* Pods-SwiftJSBridge_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftJSBridge_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		7C66C785C52456ECC5E225DA7AB895C0 /* Pods-SwiftJSBridge_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftJSBridge_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		84B7410E16DB180F0FC2CE64C735AF6A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8DA5C136DAF61FB5EE6AB07351A35B5B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		902EF3301EAC62651DE92EF24BC665E4 /* SwiftJSBridge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftJSBridge.framework; path = SwiftJSBridge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DA5C136DAF61FB5EE6AB07351A35B5B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		902EF3301EAC62651DE92EF24BC665E4 /* SwiftJSBridge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftJSBridge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		909D8479C760BFA465B0D7AA40D392BC /* Pods-SwiftJSBridge_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftJSBridge_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		92480B55680F125DE10D4FBACC9145DA /* SwiftJSBridge.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = SwiftJSBridge.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		92480B55680F125DE10D4FBACC9145DA /* BetterSwiftJSBridge.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = BetterSwiftJSBridge.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		975608A9D43FD824987473963304E4EA /* SwiftJSBridge.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftJSBridge.xcconfig; sourceTree = "<group>"; };
 		9B9CF61F838C7DCD3CA0427697273E5A /* Pods-SwiftJSBridge_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftJSBridge_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		9C349F1A5174AE57D26743F4986C0E5D /* Pods-SwiftJSBridge_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftJSBridge_Example-dummy.m"; sourceTree = "<group>"; };
@@ -179,7 +179,7 @@
 			children = (
 				29CC8F89C575C438B2C180CF0753A8A9 /* LICENSE */,
 				8DA5C136DAF61FB5EE6AB07351A35B5B /* README.md */,
-				92480B55680F125DE10D4FBACC9145DA /* SwiftJSBridge.podspec */,
+				92480B55680F125DE10D4FBACC9145DA /* BetterSwiftJSBridge.podspec */,
 			);
 			name = Pod;
 			sourceTree = "<group>";

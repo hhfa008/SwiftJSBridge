@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'BetterSwiftJSBridge'
-s.version = '0.1.5'
-  s.summary          = 'SwiftJSBridge is a handy JavaScript Bridge, written in Swift, support WKWebView and UIWebView.'
+s.version = '0.1.6'
+  s.summary          = 'BetterSwiftJSBridge is a handy JavaScript Bridge, written in Swift, support WKWebView and UIWebView.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ s.version = '0.1.5'
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-SwiftJSBridge is a handy JavaScript Bridge, written in Swift, support WKWebView and UIWebView.
+BetterSwiftJSBridge is a handy JavaScript Bridge, written in Swift, support WKWebView and UIWebView.
                        DESC
 
   s.homepage         = 'https://github.com/hhfa008/SwiftJSBridge'
