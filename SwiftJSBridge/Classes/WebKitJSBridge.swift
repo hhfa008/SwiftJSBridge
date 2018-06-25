@@ -20,12 +20,19 @@ class WebKitJSBridge: NSObject, WKScriptMessageHandler, WebViewJSBridge {
     weak var webview: WKWebView?
 
     func userContentController(_: WKUserContentController, didReceive message: WKScriptMessage) {
+    
         let name = message.name
+        
+        if name == "SwiftJSBridgeInject" {
+            _ = baseBridge?.injectJS()
+            return
+        }
+        
         let body = message.body
         print(name)
         print(body)
         if let data = try? JSONSerialization.data(withJSONObject: body, options: .prettyPrinted) {
-            _ = baseBridge?.callFormJS(data: data)
+            _ = baseBridge?.callFromJS(data: data)
         }
     }
 

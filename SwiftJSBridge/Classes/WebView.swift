@@ -9,7 +9,7 @@ import Foundation
 import WebKit
 
 extension WKWebView: WebView {
-    public func load(url: URL) -> Bool {
+    public func loadFileURL(url: URL) -> Bool {
         let readAccessUrl = url.deletingLastPathComponent()
 
         if #available(iOS 9.0, *) {
@@ -31,6 +31,7 @@ extension WKWebView: WebView {
         let config = configuration
         let bridge = WebKitJSBridge(for: self, with: base)
         config.userContentController.add(bridge, name: "SwiftJSBridge")
+        config.userContentController.add(bridge, name: "SwiftJSBridgeInject")
         jsBridge = bridge
 //        self.configuration = config
     }
@@ -42,8 +43,7 @@ extension WKWebView: WebView {
 }
 
 extension UIWebView: WebView {
-    public func load(url: URL) -> Bool {
-        let readAccessUrl = url.deletingLastPathComponent()
+    public func loadFileURL(url: URL) -> Bool {
         let req = URLRequest(url: url)
         loadRequest(req)
         //        if #available(iOS 9.0, *) {

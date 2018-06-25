@@ -12,174 +12,90 @@ if (window.SwiftJSBridge) {
 return;
 }
 
-if (!window.onerror) {
-window.onerror = function(msg, url, line) {
-console.log("SwiftJSBridge: ERROR:" + msg + "@" + url + ":" + line);
-}
-}
 window.SwiftJSBridge = {
-registerHandler: registerHandler,
-callHandler: callHandler,
-disableJavscriptAlertBoxSafetyTimeout: disableJavscriptAlertBoxSafetyTimeout,
-_setHash: _setHash,
-_fetchQueue: _fetchQueue,
-_callFromSwift: _callFromSwift
+addJSBridge: addJSBridge,
+callNativeBridge: callNativeBridge,
+_setHash: function(value){ hashValue = value },
+_fetchCommandQueue: _fetchCommandQueue,
+_callFromSwift: _callFromSwift,
+_callbackFromSwift: _callbackFromSwift
 };
 
-var messagingIframe;
 var hashValue = "";
 var JSCallSwiftQueue = [];
 var CallFromSwiftHandlers = {};
+var JSResponseCallbacks = {};
 
-var CUSTOM_PROTOCOL_SCHEME = 'SwiftJSBridge';
-var QUEUE_HAS_MESSAGE = '__wvjb_queue_message__';
-
-var responseCallbacks = {};
-var uniqueId = 1;
-var dispatchMessagesWithTimeoutSafety = true;
-
-initJSBridge();
-
-registerHandler("_disableJavascriptAlertBoxSafetyTimeout", disableJavscriptAlertBoxSafetyTimeout);
-
-setTimeout(_callWVJBCallbacks, 0);
-function _callWVJBCallbacks() {
-var callbacks = window.WVJBCallbacks;
-delete window.WVJBCallbacks;
+setTimeout(function() {
+var callbacks = window.SwiftJSBridgeReadyCallbacks;
+delete window.SwiftJSBridgeReadyCallbacks;
 for (var i=0; i<callbacks.length; i++) {
 callbacks[i](SwiftJSBridge);
 }
+}, 0);
+
+function addJSBridge(name, jsBridge) {
+CallFromSwiftHandlers[name] = jsBridge;
 }
 
-function _setHash(value) {
-hashValue  = value
-}
-
-function registerHandler(handlerName, handler) {
-CallFromSwiftHandlers[handlerName] = handler;
-}
-
-function callHandler(handlerName, data, responseCallback) {
+function callNativeBridge(name, data, callback) {
 if (arguments.length == 2 && typeof data == 'function') {
-responseCallback = data;
+callback = data;
 data = null;
 }
-PostSwiftCall({ name:handlerName, data:data }, responseCallback);
-}
-function disableJavscriptAlertBoxSafetyTimeout() {
-dispatchMessagesWithTimeoutSafety = false;
+var callbackID
+if (callback)  {
+callbackID = name + Math.random()
+JSResponseCallbacks[callbackID] = callback;
 }
 
-
-function PostSwiftCall(message, responseCallback) {
-if (responseCallback) {
-var callbackID = 'cb_'+(uniqueId++)+'_'+new Date().getTime();
-responseCallbacks[callbackID] = responseCallback;
-message['callbackID'] = callbackID;
+PostSwiftCall({ name:name, data:data, callbackID:callbackID });
 }
+
+function PostSwiftCall(message) {
 JSCallSwiftQueue.push(message);
-SwiftCall()
-
-}
-
-function _fetchQueue() {
-var messageQueueString = JSON.stringify(JSCallSwiftQueue);
-JSCallSwiftQueue = [];
-return messageQueueString;
-}
-
-function _dispatchMessageFromNative(messageJSON) {
-if (dispatchMessagesWithTimeoutSafety) {
-setTimeout(_doDispatchMessageFromNative);
-} else {
-_doDispatchMessageFromNative();
-}
-
-function _doDispatchMessageFromNative() {
-
-var messageHandler;
-var responseCallback;
-
-if (message.responseId) {
-responseCallback = responseCallbacks[message.responseId];
-if (!responseCallback) {
-return;
-}
-responseCallback(message.responseData);
-delete responseCallbacks[message.responseId];
-} else {
-
-}
-}
-}
-
-function isWebKit() {
-return window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.SwiftJSBridge;
-}
-
-function SwiftCall() {
-console.log("SwiftCall" )
-if (isWebKit())  {
+if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.SwiftJSBridge)  {
 window.webkit.messageHandlers.SwiftJSBridge.postMessage(JSCallSwiftQueue)
 JSCallSwiftQueue = []
 } else {
-var src = "https" + '://' + CUSTOM_PROTOCOL_SCHEME + "/" + QUEUE_HAS_MESSAGE + "/" + Math.random() + "/?hash=" + hashValue
 var req = new XMLHttpRequest
-req.open("GET", src)
+req.open("GET", "https://SwiftJSBridge/" + Math.random() + "/?hash=" + hashValue)
 req.send()
-// messagingIframe.src = src;
-console.log(messagingIframe )
-console.log(src )
 }
 }
 
-
-function initJSBridge() {
-// if (!isWebKit()) {
-//     messagingIframe = document.createElement('iframe');
-//     messagingIframe.style.display = 'none';
-//     messagingIframe.src = CUSTOM_PROTOCOL_SCHEME + '://' + QUEUE_HAS_MESSAGE;
-//     document.documentElement.appendChild(messagingIframe);
-// }
-// var e = document.createEvent('Events');
-// e.initEvent("JSBridgeLoaded", true, false);
-// document.dispatchEvent(e);
-
-var event; // The custom event that will be created
-
-if (document.createEvent) {
-event = document.createEvent("HTMLEvents");
-event.initEvent("dataavailable", true, true);
-} else {
-event = document.createEventObject();
-event.eventType = "dataavailable";
-}
-
-event.eventName = "dataavailable";
-
-if (document.createEvent) {
-element.dispatchEvent(event);
-} else {
-alert("ccc")
-element.fireEvent("on" + event.eventType, event);
-}
+function _fetchCommandQueue() {
+var messageQueueString = JSON.stringify(JSCallSwiftQueue);
+JSCallSwiftQueue = [];
+return messageQueueString;
 }
 
 function _callFromSwift(messageJSON) {
 var message = JSON.parse(messageJSON)
 var responseCallback
 if (message.callbackID) {
-var callbackResponseId = message.callbackID;
-responseCallback = function(responseData) {
-PostSwiftCall({ handlerName:message.name, responseId:callbackResponseId, responseData:responseData });
+responseCallback = function(callbackData) {
+PostSwiftCall({ name:message.name, responseID:message.callbackID, data:callbackData });
 };
 }
 
 var handler = CallFromSwiftHandlers[message.name];
 if (!handler) {
-console.log("SwiftJSBridge: WARNING: no handler for message from ObjC:", message);
+console.log("SwiftJSBridge: WARNING: no bridge for message from Native:", message);
 } else {
 handler(message.data, responseCallback);
+}
+}
+
+function _callbackFromSwift(messageJSON) {
+var message = JSON.parse(messageJSON)
+if (message.responseID) {
+var responseCallback = JSResponseCallbacks[message.responseID];
+if (!responseCallback) {
+return;
+}
+responseCallback(message.data);
+delete JSResponseCallbacks[message.responseID];
 }
 }
 

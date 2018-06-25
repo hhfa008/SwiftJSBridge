@@ -8,7 +8,8 @@
 import Foundation
 
 extension Notification.Name {
-    static let MessageFromWebview = Notification.Name("MessageFromNative")
+    static let MessageFromWebview = Notification.Name("SwiftJSBridge".lowercased())
+    static let InjectMessageFromWebview = Notification.Name("SwiftJSBridgeInject".lowercased())
 }
 
 extension Notification.Name {
@@ -61,6 +62,17 @@ class UIWebViewJSBridge: NSObject, WebViewJSBridge {
             }
             self.messageFromWebview(url: url)
         }
+        
+        Notification.Name.InjectMessageFromWebview.observer{ [weak self] notification in
+            guard let `self` = self else {
+                return
+            }
+            let userInfo = notification.userInfo
+            guard let _ = userInfo?.values.first as? URL else {
+                return
+            }
+            _ = self.baseBridge?.injectJS()
+        }
     }
 
     func messageFromWebview(url: URL) {
@@ -72,19 +84,11 @@ class UIWebViewJSBridge: NSObject, WebViewJSBridge {
                 }
             }
         }
-        let fetchQueue = webview?.stringByEvaluatingJavaScript(from: "SwiftJSBridge._fetchQueue()")
+        let fetchQueue = webview?.stringByEvaluatingJavaScript(from: "SwiftJSBridge._fetchCommandQueue()")
 
         if let data = fetchQueue?.data(using: .utf8) {
-//        let json = try? JSONDecoder.init().decode([CallbackJSON].self, from: data)
-//        guard let a = json else {
-//            return
-//        }
-//           _ = baseBridge?.callFormJS(array: a)
-//        }
-            _ = baseBridge?.callFormJS(data: data)
+            _ = baseBridge?.callFromJS(data: data)
         }
-
-//        print(fetchQueue)
     }
 
     func covert(url: URLComponents) -> [String: String]? {
@@ -100,10 +104,6 @@ class UIWebViewJSBridge: NSObject, WebViewJSBridge {
         }
         return dict
     }
-
-    deinit {
-        print("deinit")
-    }
 }
 
 class JSBridgeURLProtocol: URLProtocol {
@@ -111,15 +111,12 @@ class JSBridgeURLProtocol: URLProtocol {
         guard let url = request.url else {
             return false
         }
-//        let path = url.path
-        let scheme = url.host
-
-        guard scheme?.lowercased() == "SwiftJSBridge".lowercased() else {
+        guard let host = url.host, (host.lowercased().hasSuffix("SwiftJSBridge".lowercased()))  else {
             return false
         }
-        print("JSBridgeURLProtocol")
+
         DispatchQueue.main.async {
-            Notification.Name.MessageFromWebview.post(userInfo: ["url": url])
+             Notification.Name(host.lowercased()).post(userInfo: ["url": url])
         }
 
         return true

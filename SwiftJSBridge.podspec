@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  a handy JavaScript Bridge, written in Swift
                        DESC
 
   s.homepage         = 'https://github.com/hhfa008/SwiftJSBridge'
