@@ -7,8 +7,8 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'SwiftJSBridge'
-s.version = '0.1.3'
+  s.name             = 'BetterSwiftJSBridge'
+s.version = '0.1.4'
   s.summary          = 'SwiftJSBridge is a handy JavaScript Bridge, written in Swift.'
 
 # This description is used to generate tags and improve search results.
