@@ -5,6 +5,7 @@ SwiftJSBridge is a handy JavaScript Bridge, written in Swift, support WKWebView 
 
 
 ## Example
+1.Swift 
 ```swift
 let JSBridge = SwiftJSBridge(for: webview)
 JSBridge.addSwift(bridge: { (data, cb) in
@@ -16,7 +17,54 @@ JSBridge?.callJS(name: "sendMessageToJS", data: ["message":"Hi, I am native"]) {
 }
 
 ```
+2. JS
 
+``` JS
+ function setupSwiftJSBridge(callback) {
+            if (window.SwiftJSBridge) { return callback(SwiftJSBridge); }
+            if (window.SwiftJSBridgeReadyCallbacks) { return window.SwiftJSBridgeReadyCallbacks.push(callback); }
+            window.SwiftJSBridgeReadyCallbacks = [callback];
+            SwiftJSBridgeInject()
+        }
+
+        function isWebKit() {
+            return window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.SwiftJSBridgeInject;
+        }
+
+        function SwiftJSBridgeInject() {
+            console.log("SwiftJSBridgeInject" )
+            if (isWebKit())  {
+                window.webkit.messageHandlers.SwiftJSBridgeInject.postMessage("SwiftJSBridgeInject")
+            } else {
+                var src = "https://SwiftJSBridgeInject/" + Math.random()
+                var req = new XMLHttpRequest
+                req.open("GET", src)
+                req.send()
+            }
+        }
+
+        setupSwiftJSBridge(function(bridge) {
+            function log(message, data) {
+                console.log(message+data)
+            }
+
+            bridge.addJSBridge('sendMessageToJS', function(data, responseCallback) {
+                log('Native called sendMessageToJS with', data)
+                var responseData = { message:'Hi, I am JS' }
+                log('JS responding with', responseData)
+                responseCallback(responseData)
+            })
+        })
+        function test() {
+
+            SwiftJSBridge.callNativeBridge("getAppVersion",{"data":"v1"},function(data){
+                console.log("callback")
+                console.log(data)
+            })
+
+
+        }
+```
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
