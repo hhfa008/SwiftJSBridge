@@ -29,6 +29,7 @@ s.version = '0.1.1'
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
+  s.swift_version = '4.1'
 
   s.source_files = 'SwiftJSBridge/Classes/**/*'
   
