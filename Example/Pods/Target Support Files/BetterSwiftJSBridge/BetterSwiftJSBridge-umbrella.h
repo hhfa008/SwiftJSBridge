@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double SwiftJSBridgeVersionNumber;
-FOUNDATION_EXPORT const unsigned char SwiftJSBridgeVersionString[];
+FOUNDATION_EXPORT double BetterSwiftJSBridgeVersionNumber;
+FOUNDATION_EXPORT const unsigned char BetterSwiftJSBridgeVersionString[];
 

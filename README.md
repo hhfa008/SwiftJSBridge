@@ -1,11 +1,21 @@
 # SwiftJSBridge
   
-[![CI Status](https://img.shields.io/travis/hhfa008/SwiftJSBridge.svg?style=flat)](https://travis-ci.org/hhfa008/SwiftJSBridge)
-[![Version](https://img.shields.io/cocoapods/v/SwiftJSBridge.svg?style=flat)](https://cocoapods.org/pods/SwiftJSBridge)
-[![License](https://img.shields.io/cocoapods/l/SwiftJSBridge.svg?style=flat)](https://cocoapods.org/pods/SwiftJSBridge)
-[![Platform](https://img.shields.io/cocoapods/p/SwiftJSBridge.svg?style=flat)](https://cocoapods.org/pods/SwiftJSBridge)
+SwiftJSBridge is a handy JavaScript Bridge, written in Swift, support WKWebView and UIWebView
+
+
 
 ## Example
+```swift
+let JSBridge = SwiftJSBridge(for: webview)
+JSBridge.addSwift(bridge: { (data, cb) in
+            cb?(["appVersion":"1.0"])
+ }, name: "getAppVersion")
+
+JSBridge?.callJS(name: "sendMessageToJS", data: ["message":"Hi, I am native"]) { (data) in
+  
+}
+
+```
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 

@@ -36,7 +36,7 @@ class ViewController: UIViewController {
         
     
         view.addSubview((webview?.contentView())!)
-        let JSBridge = SwiftJSBridge.init(for: webview!)
+        let JSBridge = SwiftJSBridge(for: webview)
         self.JSBridge = JSBridge
         
         test()

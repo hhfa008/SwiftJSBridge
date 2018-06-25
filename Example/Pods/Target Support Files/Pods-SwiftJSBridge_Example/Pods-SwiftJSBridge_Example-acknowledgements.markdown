@@ -1,7 +1,7 @@
 # Acknowledgements
 This application makes use of the following third party libraries:
 
-## SwiftJSBridge
+## BetterSwiftJSBridge
 
 Copyright (c) 2018 hhfa008 <hhfa008@gmail.com>
 

@@ -310,11 +310,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SwiftJSBridge_Example/Pods-SwiftJSBridge_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SwiftJSBridge/SwiftJSBridge.framework",
+				"${BUILT_PRODUCTS_DIR}/BetterSwiftJSBridge/BetterSwiftJSBridge.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftJSBridge.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BetterSwiftJSBridge.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
