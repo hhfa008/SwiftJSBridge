@@ -1,6 +1,6 @@
 {
   "name": "JSBridgeKit",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "summary": "BetterSwiftJSBridge is a handy JavaScript Bridge, written in Swift, support WKWebView and UIWebView.",
   "description": "BetterSwiftJSBridge is a handy JavaScript Bridge, written in Swift, support WKWebView and UIWebView.",
   "homepage": "https://github.com/hhfa008/SwiftJSBridge",
@@ -13,11 +13,11 @@
   },
   "source": {
     "git": "https://github.com/hhfa008/SwiftJSBridge.git",
-    "tag": "0.1.6"
+    "tag": "0.1.7"
   },
   "platforms": {
     "ios": "8.0"
   },
   "swift_version": "4.1",
-  "source_files": "SwiftJSBridge/Classes/**/*"
+  "source_files": "JSBridgeKit/Classes/**/*"
 }

@@ -1,5 +1,5 @@
 PODS:
-  - JSBridgeKit (0.1.6)
+  - JSBridgeKit (0.1.7)
 
 DEPENDENCIES:
   - JSBridgeKit (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  JSBridgeKit: 55cf604dec5c8261ea512cf93485003ff5ac01e5
+  JSBridgeKit: b3cfb8c11aeaa15cff1ad8dac267ff8f0f0a2944
 
 PODFILE CHECKSUM: 8bde9a8076ecd61d9717d87228910ce1c9d04c19
 

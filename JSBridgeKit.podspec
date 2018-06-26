@@ -31,7 +31,7 @@ BetterSwiftJSBridge is a handy JavaScript Bridge, written in Swift, support WKWe
   s.ios.deployment_target = '8.0'
   s.swift_version = '4.1'
 
-  s.source_files = 'SwiftJSBridge/Classes/**/*'
+  s.source_files = 'JSBridgeKit/Classes/**/*'
   
   # s.resource_bundles = {
   #   'SwiftJSBridge' => ['SwiftJSBridge/Assets/*.png']
