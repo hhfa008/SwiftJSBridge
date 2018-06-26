@@ -5,7 +5,7 @@ SwiftJSBridge is a handy JavaScript Bridge, written in Swift, support WKWebView 
 
 
 ## Example
-1.Swift 
+1. Swift 
 ```swift
 let JSBridge = SwiftJSBridge(for: webview)
 JSBridge.addSwift(bridge: { (data, cb) in
@@ -75,7 +75,7 @@ SwiftJSBridge is available through [CocoaPods](https://cocoapods.org). To instal
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'BetterSwiftJSBridge'
+pod 'JSBridgeKit'
 ```
 
 ## Author

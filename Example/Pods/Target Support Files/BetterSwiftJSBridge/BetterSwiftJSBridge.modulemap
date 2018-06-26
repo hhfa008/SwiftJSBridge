@@ -1,6 +1,0 @@
-framework module BetterSwiftJSBridge {
-  umbrella header "BetterSwiftJSBridge-umbrella.h"
-
-  export *
-  module * { export * }
-}

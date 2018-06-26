@@ -1,16 +1,16 @@
 PODS:
-  - BetterSwiftJSBridge (0.1.6)
+  - JSBridgeKit (0.1.6)
 
 DEPENDENCIES:
-  - BetterSwiftJSBridge (from `../`)
+  - JSBridgeKit (from `../`)
 
 EXTERNAL SOURCES:
-  BetterSwiftJSBridge:
+  JSBridgeKit:
     :path: "../"
 
 SPEC CHECKSUMS:
-  BetterSwiftJSBridge: 5ff1cebb513b207114aa7931394c611f97b25533
+  JSBridgeKit: 55cf604dec5c8261ea512cf93485003ff5ac01e5
 
-PODFILE CHECKSUM: 1948959283ce9cacba719d2e4d8601396a50a09c
+PODFILE CHECKSUM: 8bde9a8076ecd61d9717d87228910ce1c9d04c19
 
 COCOAPODS: 1.5.3

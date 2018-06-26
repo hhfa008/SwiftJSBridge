@@ -1,7 +1,7 @@
 use_frameworks!
 
 target 'SwiftJSBridge_Example' do
-  pod 'BetterSwiftJSBridge', :path => '../'
+  pod 'JSBridgeKit', :path => '../'
 
   target 'SwiftJSBridge_Tests' do
     inherit! :search_paths
